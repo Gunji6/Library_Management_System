@@ -1,0 +1,31 @@
+create table users(id int PRIMARY key not null AUTO_INCREMENT,name  varchar(50) ,password varchar(50) ,email varchar(100) , contact varchar(20));
+show databases;
+select * from users;
+
+create table signupdetails.book_details(book_id int PRIMARY key AUTO_INCREMENT not null, book_name varchar(250),author varchar(100),quantity int);
+
+INSERT INTO book_details (book_id, book_name,author,quantity)
+VALUES (1,'Java','James',2);
+
+INSERT INTO book_details (book_id, book_name,author,quantity)
+VALUES (2,'Python','Guido van Rossum',3);
+
+select * from book_details;
+
+create table signupdetails.student_details(student_id int PRIMARY key AUTO_INCREMENT not null, name varchar(100),course varchar(100),branch varchar(100));
+
+select * from student_details;
+
+create table signupdetails.issue_book_details(id int PRIMARY KEY not null auto_increment,book_id int ,book_name varchar(150),student_id int,student_name varchar(50),issue_date date,sue_date date,status varchar(20));
+
+ ALTER TABLE issue_book_details
+ RENAME COLUMN sue_date to due_date;
+ 
+ select * from issue_book_details;
+ 
+UPDATE book_details
+SET quantity = 4
+WHERE book_id = 1;
+
+DELETE FROM issue_book_details WHERE book_name = "Java";
+
